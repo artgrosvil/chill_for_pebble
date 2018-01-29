@@ -1,0 +1,39 @@
+<ion-view title="Search Users" hide-back-button="true">
+	<ion-header-bar class="bar-light" align-title="center">
+		<button class="button button-clear" ng-click="doPhone()"><img src="template/img/sms.png" style="width:30px; margin: 4px 0 0 5px;"></button>
+		<h1 class="title">Search Users</h1>
+		<button class="button button-clear" ng-click="goBack()"><img src="template/img/close_green.png" style="width:20px; margin: 4px 0 0 5px;"></button>
+	</ion-header-bar>
+	<ion-content class="has-header">
+		<div class="row">
+			<div class="col">
+				<form ng-submit="searchUser(user)">
+					<div class="item item-input-inset">
+						<label class="item-input-wrapper">
+							<i class="icon ion-search placeholder-icon"></i>
+							<input type="text" placeholder="User login for search" ng-model="user.login">
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ion-list>
+					<div ng-hide="(users.status == 'failed')">
+						<ion-item href="#" ng-click="addContact({{users.id}})" ng-repeat="users in users.response track by $index">
+							<div class="row">
+								<div class="col col-75">
+									<span>{{ users.login }}</span>
+								</div>
+								<div class="col">
+									<img src="template/img/add.png" class="img-add">
+								</div>
+							</div>
+						</ion-item>
+					</div>
+				</ion-list>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

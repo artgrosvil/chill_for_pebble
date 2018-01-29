@@ -1,0 +1,30 @@
+<ion-view title="Dialogs" hide-back-button="true">
+	<ion-header-bar class="bar-light" align-title="center">
+		<button class="button button-clear" ng-click="doExit()"><img src="template/img/back.png" style="width:25px; margin: 4px 0 0 5px;"></button>
+		<h1 class="title">Contacts</h1>
+		<button class="button button-clear" ng-click="goBack()"><img src="template/img/close_green.png" style="width:20px; margin: 4px 0 0 5px;"></button>
+	</ion-header-bar>
+	<ion-content class="has-header">
+		<ion-refresher on-refresh="doRefresh()" refreshing-icon="ion-loading-c"></ion-refresher>
+		<div class="row">
+			<div class="col">
+				<ion-list>
+					<ion-item ng-repeat="dialogs in dialogs.response" style="text-align:center;" on-swipe-right="doSendingContent({{ dialogs.id_contact }})">
+						<div class="row">
+							<div class="col">
+								
+							</div>
+							<div class="col">
+								<span class="text_dialogs">{{ dialogs.login }}</span>
+							</div>
+							<div class="col">
+								<span class="dialog-ch">||</span>
+							</div>
+						</div>
+						<ion-option-button class="button-calm" ng-click="deleteContact({{dialogs.id_contact}})">Delete</ion-option-button>
+					</ion-item>
+				</ion-list>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

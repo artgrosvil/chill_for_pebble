@@ -1,0 +1,29 @@
+<ion-view title="All Contatcs" hide-back-button="true">
+	<ion-header-bar class="bar bar-header bar-balanced" align-title="center">
+		<h1 class="title">All Contatcs</h1>
+		<button class="button button-clear" ng-click="goBack()"><img src="template/img/close.png" style="width:20px; margin: 4px 0 0 5px;"></button>
+	</ion-header-bar>
+	<ion-content class="has-header">
+		<div class="row">
+			<div class="col">
+				<ion-list>
+					<ion-item ng-click="sendSMS({{contacts.phoneNumbers[0].value}})" ng-repeat="contacts in contacts | filter:emptyOrNullContacts">
+						<div class="row">
+							<div class="col col-75">
+								<div class="row">
+									<span>{{contacts.displayName}}</span>
+								</div>
+								<div class="row" style="padding-top:20px;color:#979797;">
+									<span>{{contacts.phoneNumbers[0].value}}</span>
+								</div>
+							</div>
+							<div class="col" style="padding-top:18px;">
+								<img src="template/img/add.png" style="width:20px; float:right;">
+							</div>
+						</div>
+					</ion-item>
+				</ion-list>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

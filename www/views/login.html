@@ -1,0 +1,40 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+	<ion-content padding="false">
+		<div class="row">
+			<div class="col">
+				<form ng-submit="auth(user)">
+					<div class="row">
+						<div class="col" style="text-align: center;">
+							<img class="logo_auth" src="template/img/logo.png">
+						</div>
+					</div>
+					<div class="row" style="padding-top:10%;">
+						<div class="col">
+							<p class="text_grey">A whole new</p>
+							<p class="text_grey">wearable experience</p>
+						</div>
+					</div>
+					<div class="row" style="padding-top:30%;">
+						<div class="col">
+							<div class="list">
+								<label class="item item-input" name="login">
+									<span class="input-label">Nick name</span>
+									<input type="text" placeholder="iamchill" ng-model="user.login">
+								</label>
+								<label class="item item-input" name="password">
+									<span class="input-label">Password</span>
+									<input type="password" placeholder="password" ng-model="user.password">
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="padding-top:20%;">
+						<div class="col">
+							<button class="button button-full button-chill" style="position: relative;">Go!</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
